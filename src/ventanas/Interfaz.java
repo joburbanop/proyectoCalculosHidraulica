@@ -71,8 +71,9 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtL1 = new javax.swing.JLabel();
         controles = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         datosIngresar = new javax.swing.JPanel();
         resalto = new javax.swing.JLabel();
         tipo = new javax.swing.JTextField();
@@ -142,13 +143,29 @@ public class Interfaz extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtL1.setFont(new java.awt.Font("Times New Roman", 2, 12)); // NOI18N
-        txtL1.setForeground(new java.awt.Color(255, 255, 255));
-        txtL1.setText("L1");
-        getContentPane().add(txtL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 50, -1));
-
+        controles.setBackground(new java.awt.Color(204, 204, 204));
         controles.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.darkGray, java.awt.Color.lightGray, java.awt.Color.lightGray));
-        getContentPane().add(controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 770, 70));
+        controles.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/botones.png"))); // NOI18N
+        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+        controles.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, 70, 40));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/minimizar.png"))); // NOI18N
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        controles.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 80, 50));
+
+        getContentPane().add(controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 770, 60));
 
         datosIngresar.setBackground(new java.awt.Color(0, 0, 0));
         datosIngresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.gray, java.awt.Color.lightGray, java.awt.Color.lightGray));
@@ -166,7 +183,7 @@ public class Interfaz extends javax.swing.JFrame {
                 tipoActionPerformed(evt);
             }
         });
-        datosIngresar.add(tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 120, 30));
+        datosIngresar.add(tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 150, 30));
 
         BorrarTodo.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         BorrarTodo.setText("borar todo");
@@ -331,6 +348,12 @@ public class Interfaz extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonEnterMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButtonEnterMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButtonEnterMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButtonEnterMousePressed(evt);
             }
@@ -394,7 +417,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         datosIngresar.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 790, 260));
 
-        getContentPane().add(datosIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 770, 510));
+        getContentPane().add(datosIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 770, 520));
 
         resultado.setBackground(new java.awt.Color(255, 255, 255));
         resultado.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.gray, java.awt.Color.lightGray, java.awt.Color.lightGray));
@@ -408,7 +431,7 @@ public class Interfaz extends javax.swing.JFrame {
                 txtPantallaSalidaV1ActionPerformed(evt);
             }
         });
-        resultado.add(txtPantallaSalidaV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 100, 30));
+        resultado.add(txtPantallaSalidaV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 580, 100, 30));
 
         txtPantallaSalidaFR1.setEditable(false);
         txtPantallaSalidaFR1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
@@ -418,12 +441,12 @@ public class Interfaz extends javax.swing.JFrame {
                 txtPantallaSalidaFR1ActionPerformed(evt);
             }
         });
-        resultado.add(txtPantallaSalidaFR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 100, 30));
+        resultado.add(txtPantallaSalidaFR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 580, 100, 30));
 
         txtPantallaSalidaY2.setEditable(false);
         txtPantallaSalidaY2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         txtPantallaSalidaY2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.black, java.awt.Color.darkGray, java.awt.Color.darkGray));
-        resultado.add(txtPantallaSalidaY2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 100, 30));
+        resultado.add(txtPantallaSalidaY2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 580, 100, 30));
 
         txtPantallaSalidaV2.setEditable(false);
         txtPantallaSalidaV2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
@@ -433,7 +456,7 @@ public class Interfaz extends javax.swing.JFrame {
                 txtPantallaSalidaV2ActionPerformed(evt);
             }
         });
-        resultado.add(txtPantallaSalidaV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 100, 30));
+        resultado.add(txtPantallaSalidaV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 580, 100, 30));
 
         txtPantallaSalidaE1.setEditable(false);
         txtPantallaSalidaE1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
@@ -443,12 +466,12 @@ public class Interfaz extends javax.swing.JFrame {
                 txtPantallaSalidaE1ActionPerformed(evt);
             }
         });
-        resultado.add(txtPantallaSalidaE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 100, 30));
+        resultado.add(txtPantallaSalidaE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 580, 100, 30));
 
         txtPantallaSalidaE2.setEditable(false);
         txtPantallaSalidaE2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         txtPantallaSalidaE2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.black, java.awt.Color.darkGray, java.awt.Color.darkGray));
-        resultado.add(txtPantallaSalidaE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 100, 30));
+        resultado.add(txtPantallaSalidaE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 580, 100, 30));
 
         txtPantallaSalidaNe.setEditable(false);
         txtPantallaSalidaNe.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
@@ -458,7 +481,7 @@ public class Interfaz extends javax.swing.JFrame {
                 txtPantallaSalidaNeActionPerformed(evt);
             }
         });
-        resultado.add(txtPantallaSalidaNe, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 100, 30));
+        resultado.add(txtPantallaSalidaNe, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 580, 100, 30));
 
         eficiencia.setEditable(false);
         eficiencia.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
@@ -468,7 +491,7 @@ public class Interfaz extends javax.swing.JFrame {
                 eficienciaActionPerformed(evt);
             }
         });
-        resultado.add(eficiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 530, 110, 30));
+        resultado.add(eficiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 580, 110, 30));
 
         txtPantallaSalidaNRH.setEditable(false);
         txtPantallaSalidaNRH.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
@@ -478,32 +501,32 @@ public class Interfaz extends javax.swing.JFrame {
                 txtPantallaSalidaNRHActionPerformed(evt);
             }
         });
-        resultado.add(txtPantallaSalidaNRH, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 100, 30));
+        resultado.add(txtPantallaSalidaNRH, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 580, 100, 30));
 
         v1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        v1.setText("v1");
-        resultado.add(v1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
+        v1.setText("V1");
+        resultado.add(v1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 580, -1, -1));
 
         fr1.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         fr1.setText("FR1");
-        resultado.add(fr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
+        resultado.add(fr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 580, -1, -1));
 
         V2.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         V2.setText("V2");
-        resultado.add(V2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 20, 20));
+        resultado.add(V2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 580, 20, 20));
 
         Y2.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         Y2.setText("Y2");
-        resultado.add(Y2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
+        resultado.add(Y2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 580, -1, -1));
 
         E1.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         E1.setForeground(new java.awt.Color(51, 51, 51));
         E1.setText("E1");
-        resultado.add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
+        resultado.add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 580, -1, -1));
 
         E2.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         E2.setText("E2");
-        resultado.add(E2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, -1, 10));
+        resultado.add(E2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 580, -1, 10));
 
         L2.setEditable(false);
         L2.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
@@ -538,19 +561,19 @@ public class Interfaz extends javax.swing.JFrame {
                 resultadosMouseClicked(evt);
             }
         });
-        resultado.add(resultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 100, 30));
+        resultado.add(resultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 580, 100, 30));
 
         E3.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         E3.setText("Pérdida de energia");
-        resultado.add(E3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 530, -1, 20));
+        resultado.add(E3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 580, -1, 20));
 
         E4.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         E4.setText("nRH");
-        resultado.add(E4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, -1, 20));
+        resultado.add(E4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 580, -1, 20));
 
         E5.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         E5.setText("nE");
-        resultado.add(E5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, -1, 20));
+        resultado.add(E5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 580, -1, 20));
 
         txtEficiencia.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         txtEficiencia.setForeground(new java.awt.Color(255, 255, 255));
@@ -608,6 +631,18 @@ public class Interfaz extends javax.swing.JFrame {
            
             txtPantallaSalidaV1.setText(String.valueOf(hidraulica1.calcularVelocidad()+" cm/s"));
             txtPantallaSalidaFR1.setText(String.valueOf(hidraulica1.FR1()));
+            
+            
+            txtPantallaSalidaY2.setText(String.valueOf(hidraulica1.Y2()+" cm"));
+            txtPantallaSalidaV2.setText(String.valueOf(hidraulica1.velocidad2()+" cm/s"));
+            txtPantallaSalidaE1.setText(String.valueOf(hidraulica1.E1()+" cm"));
+            txtPantallaSalidaE2.setText(String.valueOf(hidraulica1.E2()+" cm"));
+            txtPantallaSalidaNRH.setText(String.valueOf(hidraulica1.nRH()));
+            txtPantallaSalidaNe.setText(String.valueOf(hidraulica1.nE()));
+            l1.setText(String.valueOf(hidraulica1.l1()+" cm"));
+            L2.setText(String.valueOf(hidraulica1.l2()+" cm"));
+            l3.setText(String.valueOf(hidraulica1.l3()+" cm"));
+            eficiencia.setText(String.valueOf(hidraulica1.peridaEnergia()+" cm"));
             if(hidraulica1.FR1()==1)
             {
                 tipo.setText(" No hay resalto");
@@ -633,17 +668,10 @@ public class Interfaz extends javax.swing.JFrame {
             {
                 tipo.setText(" Resalto Fuerte");
             }
-            
-            txtPantallaSalidaY2.setText(String.valueOf(hidraulica1.Y2()+" cm"));
-            txtPantallaSalidaV2.setText(String.valueOf(hidraulica1.velocidad2()+" cm/s"));
-            txtPantallaSalidaE1.setText(String.valueOf(hidraulica1.E1()+" cm"));
-            txtPantallaSalidaE2.setText(String.valueOf(hidraulica1.E2()+" cm"));
-            txtPantallaSalidaNRH.setText(String.valueOf(hidraulica1.nRH()));
-            txtPantallaSalidaNe.setText(String.valueOf(hidraulica1.nE()));
-            l1.setText(String.valueOf(hidraulica1.l1()+" cm"));
-            L2.setText(String.valueOf(hidraulica1.l2()+" cm"));
-            l3.setText(String.valueOf(hidraulica1.l3()+" cm"));
-            eficiencia.setText(String.valueOf(hidraulica1.peridaEnergia()+" cm"));
+            else
+            {
+                tipo.setText(" Sin clasificacion");
+            }
              
         }
         else
@@ -821,11 +849,11 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_BorrarActionPerformed
 
     private void txtPantallaSalidaV2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPantallaSalidaV2ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtPantallaSalidaV2ActionPerformed
 
     private void ingresarDatosAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_ingresarDatosAncestorAdded
-        // TODO add your handling code here:
+   
     }//GEN-LAST:event_ingresarDatosAncestorAdded
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -866,19 +894,19 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtPantallaSalidaNRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPantallaSalidaNRHActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_txtPantallaSalidaNRHActionPerformed
 
     private void l3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l3ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_l3ActionPerformed
 
     private void l1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l1ActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_l1ActionPerformed
 
     private void txtPantallaIngresoCanalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPantallaIngresoCanalActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_txtPantallaIngresoCanalActionPerformed
 
     private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton0ActionPerformed
@@ -958,7 +986,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEnterActionPerformed
 
     private void eficienciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eficienciaActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_eficienciaActionPerformed
 
     private void txtPantallaSalidaV1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPantallaSalidaV1ActionPerformed
@@ -966,15 +994,15 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPantallaSalidaV1ActionPerformed
 
     private void txtPantallaSalidaFR1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPantallaSalidaFR1ActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_txtPantallaSalidaFR1ActionPerformed
 
     private void txtPantallaSalidaE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPantallaSalidaE1ActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_txtPantallaSalidaE1ActionPerformed
 
     private void txtPantallaSalidaNeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPantallaSalidaNeActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_txtPantallaSalidaNeActionPerformed
 
     private void resultadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resultadosMouseClicked
@@ -998,15 +1026,19 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_FondoMouseClicked
 
     private void enviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enviarMouseClicked
+        
+        //  Longuitudes
         AnimationClass longuitud1=new AnimationClass();
-        longuitud1.jLabelXRight(-30, 10, 10, 5, L1);
+        longuitud1.jLabelXRight(-30, 10, 2, 2, L1);
         
         AnimationClass longuitud2=new AnimationClass();
-        longuitud2.jLabelXRight(-30, 10, 10, 5, txtL2);
+        longuitud2.jLabelXRight(-30, 10, 2, 2, txtL2);
         
         AnimationClass longuitud3=new AnimationClass();
-        longuitud3.jLabelXRight(-30, 10, 10, 5, txtL3);
+        longuitud3.jLabelXRight(-30, 10, 2, 2, txtL3);
         
+        //------------------------------------------------------
+        //Resultados
         AnimationClass resultado1=new AnimationClass();
         resultado1.jTextFieldXRight(-100, 30, 10, 5, l1);
         
@@ -1016,14 +1048,94 @@ public class Interfaz extends javax.swing.JFrame {
         AnimationClass resultado3=new AnimationClass();
         resultado3.jTextFieldXRight(-100, 30, 10, 5, l3);
         
+        //-----------------------------------------------
+        //jLabelResulatso 
+        AnimationClass jLabelresultado=new AnimationClass();
+        jLabelresultado.jLabelYUp(580, 50, 10, 5, resultados);
+        
+        //---------------------------------------------------
+        //V1
+        AnimationClass V1=new AnimationClass();
+        V1.jLabelYUp(580, 130, 10, 5, v1);
+        
+        AnimationClass v1Pantalla=new AnimationClass();
+        v1Pantalla.jTextFieldYUp(580, 130, 10, 5, txtPantallaSalidaV1);
+        
+        
+         //---------------------------------------------------
+        //FR1
+        AnimationClass FR1=new AnimationClass();
+        FR1.jLabelYUp(580, 180, 10, 5, fr1);
+        
+        AnimationClass FR1Pantalla=new AnimationClass();
+        FR1Pantalla.jTextFieldYUp(580, 180, 10, 5, txtPantallaSalidaFR1);
+        
+         //---------------------------------------------------
+        //Y2
+        AnimationClass y2=new AnimationClass();
+        y2.jLabelYUp(580, 230, 10, 5, Y2);
+        
+        AnimationClass y2Pantalla=new AnimationClass();
+        y2Pantalla.jTextFieldYUp(580, 230, 10, 5, txtPantallaSalidaY2);
+        
+        
+         //---------------------------------------------------
+        //e1
+        AnimationClass e1=new AnimationClass();
+        e1.jLabelYUp(580, 280, 10, 5, E1);
+        
+        AnimationClass e1Pantalla=new AnimationClass();
+        e1Pantalla.jTextFieldYUp(580, 280, 10, 5, txtPantallaSalidaE1);
+        
+        //---------------------------------------------------
+        //V2
+        AnimationClass v2=new AnimationClass();
+        v2.jLabelYUp(580, 330, 10, 5, V2);
+        
+        AnimationClass v2Pantalla=new AnimationClass();
+        v2Pantalla.jTextFieldYUp(580, 330, 10, 5, txtPantallaSalidaV2);
+        
+        
+         //---------------------------------------------------
+        //E2
+        AnimationClass e2=new AnimationClass();
+        e2.jLabelYUp(580, 380, 10, 5, E2);
+        
+        AnimationClass E2Pantalla=new AnimationClass();
+        E2Pantalla.jTextFieldYUp(580, 380, 10, 5, txtPantallaSalidaE2);
+        
+         //---------------------------------------------------
+        //NRH
+        AnimationClass NRH=new AnimationClass();
+        NRH.jLabelYUp(580, 430, 10, 5, E4);
+        
+        AnimationClass NRHPantalla=new AnimationClass();
+        NRHPantalla.jTextFieldYUp(580, 430, 10, 5, txtPantallaSalidaNRH);
+        
+        
+         //---------------------------------------------------
+        //NE
+        AnimationClass e5=new AnimationClass();
+        e5.jLabelYUp(580, 480, 10, 5, E5);
+        
+        AnimationClass e5Pantalla=new AnimationClass();
+        e5Pantalla.jTextFieldYUp(580, 480, 10, 5, txtPantallaSalidaNe);
+        
+        //---------------------------------------------------
+        //eficiencia
+        AnimationClass EFICIENCIA=new AnimationClass();
+        EFICIENCIA.jLabelYUp(580, 530, 10, 5, E3);
+        
+        AnimationClass e3Pantalla=new AnimationClass();
+        e3Pantalla.jTextFieldYUp(580, 530, 10, 5, eficiencia);
     }//GEN-LAST:event_enviarMouseClicked
 
     private void txtPantallaIngresoProfundidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPantallaIngresoProfundidadActionPerformed
-        // TODO add your handling code here:
+     
     }//GEN-LAST:event_txtPantallaIngresoProfundidadActionPerformed
 
     private void txtPantallaIngresoCaudalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPantallaIngresoCaudalActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_txtPantallaIngresoCaudalActionPerformed
 
     private void BorrarTodoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BorrarTodoMouseClicked
@@ -1036,14 +1148,141 @@ public class Interfaz extends javax.swing.JFrame {
         AnimationClass borrar3=new AnimationClass();
         borrar3.jTextFieldXLeft(30, -100, 10, 5, l3);
         
-        AnimationClass text1=new AnimationClass();
-        text1.jLabelXLeft(ABORT, ERROR, WIDTH, NORMAL, jLabel1);
+        //------------------------------------------------------
+        //Resultados
+        //  Longuitudes
+        AnimationClass longuitud1=new AnimationClass();
+        longuitud1.jLabelXLeft(10, -30, 2, 2, L1);
         
+        AnimationClass longuitud2=new AnimationClass();
+        longuitud2.jLabelXLeft(10, -30, 2, 2, txtL2);
+        
+        AnimationClass longuitud3=new AnimationClass();
+        longuitud3.jLabelXLeft(10, -30, 2, 2, txtL3);
+        
+        //-----------------------------------------------
+        //jLabelResulatso 
+        AnimationClass jLabelresultado=new AnimationClass();
+        jLabelresultado.jLabelYDown(50, 580, 10, 5, resultados);
+        
+        //---------------------------------------------------
+        //V1
+        AnimationClass V1=new AnimationClass();
+        V1.jLabelYDown(130, 580, 10, 5, v1);
+        
+        AnimationClass v1Pantalla=new AnimationClass();
+        v1Pantalla.jTextFieldYDown(130, 580, 10, 5, txtPantallaSalidaV1);
+        
+        
+         //---------------------------------------------------
+        //FR1
+        AnimationClass FR1=new AnimationClass();
+        FR1.jLabelYDown(180, 580, 10, 5, fr1);
+        
+        AnimationClass FR1Pantalla=new AnimationClass();
+        FR1Pantalla.jTextFieldYDown(180, 580, 10, 5, txtPantallaSalidaFR1);
+        
+         //---------------------------------------------------
+        //Y2
+        AnimationClass y2=new AnimationClass();
+        y2.jLabelYDown(230, 580, 10, 5, Y2);
+        
+        AnimationClass y2Pantalla=new AnimationClass();
+        y2Pantalla.jTextFieldYDown(230, 580, 10, 5, txtPantallaSalidaY2);
+        
+        
+         //---------------------------------------------------
+        //e1
+        AnimationClass e1=new AnimationClass();
+        e1.jLabelYDown(280, 580, 10, 5, E1);
+        
+        AnimationClass e1Pantalla=new AnimationClass();
+        e1Pantalla.jTextFieldYDown(280, 580, 10, 5, txtPantallaSalidaE1);
+        
+        //---------------------------------------------------
+        //V2
+        AnimationClass v2=new AnimationClass();
+        v2.jLabelYDown(330, 580, 10, 5, V2);
+        
+        AnimationClass v2Pantalla=new AnimationClass();
+        v2Pantalla.jTextFieldYDown(330, 580, 10, 5, txtPantallaSalidaV2);
+        
+        
+         //---------------------------------------------------
+        //E2
+        AnimationClass e2=new AnimationClass();
+        e2.jLabelYDown(380, 580, 10, 5, E2);
+        
+        AnimationClass E2Pantalla=new AnimationClass();
+        E2Pantalla.jTextFieldYDown(380, 580, 10, 5, txtPantallaSalidaE2);
+        
+         //---------------------------------------------------
+        //NRH
+        AnimationClass NRH=new AnimationClass();
+        NRH.jLabelYDown(430, 580, 10, 5, E4);
+        
+        AnimationClass NRHPantalla=new AnimationClass();
+        NRHPantalla.jTextFieldYUp(430, 580, 10, 5, txtPantallaSalidaNRH);
+        
+        
+         //---------------------------------------------------
+        //NE
+        AnimationClass e5=new AnimationClass();
+        e5.jLabelYDown(480, 580, 10, 5, E5);
+        
+        AnimationClass e5Pantalla=new AnimationClass();
+        e5Pantalla.jTextFieldYDown(480, 580, 10, 5, txtPantallaSalidaNe);
+        
+        //---------------------------------------------------
+        //eficiencia
+        AnimationClass EFICIENCIA=new AnimationClass();
+        EFICIENCIA.jLabelYDown(530, 580, 10, 5, E3);
+        
+        AnimationClass e3Pantalla=new AnimationClass();
+        e3Pantalla.jTextFieldYDown(530, 580, 10, 5, eficiencia);
+        txtPantallaIngresoCanal.setText("");
+        txtPantallaIngresoCaudal.setText("");
+        txtPantallaIngresoProfundidad.setText("");
+        txtPantallaSalidaV1.setText("");
+        txtPantallaSalidaFR1.setText("");
+        txtPantallaSalidaY2.setText("");
+        txtPantallaSalidaV2.setText("");
+        txtPantallaSalidaE1.setText("");
+        txtPantallaSalidaE2.setText("");
+        txtPantallaSalidaNRH.setText("");
+        txtPantallaSalidaNe.setText("");
+        l1.setText("");
+        L2.setText("");
+        l3.setText("");
+        eficiencia.setText("");
+        tipo.setText("");
+  
     }//GEN-LAST:event_BorrarTodoMouseClicked
 
     private void tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_tipoActionPerformed
+
+    private void jButtonEnterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEnterMouseEntered
+
+    }//GEN-LAST:event_jButtonEnterMouseEntered
+
+    private void jButtonEnterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEnterMouseExited
+
+    }//GEN-LAST:event_jButtonEnterMouseExited
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        int dialog=JOptionPane.YES_NO_OPTION;
+        int result=JOptionPane.showConfirmDialog(null, "Desea salir?","Exit",dialog);
+        if (result==0)
+        {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        this.setState(Interfaz.ICONIFIED);
+    }//GEN-LAST:event_jLabel8MouseClicked
 
     /**
      * funcion principal
@@ -1123,6 +1362,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField l1;
     private javax.swing.JTextField l3;
     private javax.swing.JLabel profundidad;
@@ -1131,7 +1372,6 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel resultados;
     private javax.swing.JTextField tipo;
     private javax.swing.JLabel txtEficiencia;
-    private javax.swing.JLabel txtL1;
     private javax.swing.JLabel txtL2;
     private javax.swing.JLabel txtL3;
     private javax.swing.JTextField txtPantallaIngresoCanal;
