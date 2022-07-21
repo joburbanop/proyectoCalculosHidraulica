@@ -15,7 +15,7 @@ public class Hidraulica {
      * Metodos y Constantes
      *-------------------*/
     
-    private final static double GRAVEDAD=9.81;
+    private final static double GRAVEDAD=981;
     
     private double caudal;
     
@@ -73,7 +73,7 @@ public class Hidraulica {
     public double Y2()
     {
         double raiz=1+8*(Math.pow(fr1,2));
-        y2=(0.5)*(Math.sqrt(raiz)-1)*profundidad;
+        y2=((0.5)*(Math.sqrt(raiz)-1))*profundidad;
         double y2Round=Math.round(y2*1000.0)/1000.0;
         y2=y2Round;
         return y2;
@@ -98,7 +98,7 @@ public class Hidraulica {
     }
     public double nRH()
     {   
-        double nRH=e1/e2;
+        double nRH=e2/e1;
         return Math.round(nRH*1000.0)/1000.0;
     }
     

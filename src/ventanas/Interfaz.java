@@ -11,6 +11,7 @@ import hidraulica.*;
 import java.util.Set;
 import javax.swing.JTextField;
 import AppPackage.AnimationClass;
+import javax.swing.JOptionPane;
 //esta clase es hija de la clase padre JFrame
 public class Interfaz extends javax.swing.JFrame {
     /*---------------
@@ -35,9 +36,7 @@ public class Interfaz extends javax.swing.JFrame {
     // de esta clase
     private static Hidraulica hidraulica1;
     
-    //controla el envento calcular
-    private static int eventoCalcular=0;
-    
+    //controla los eventos de movimiento 
     private static int enviarSalida=0;
    
     
@@ -72,22 +71,19 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtL1 = new javax.swing.JLabel();
+        controles = new javax.swing.JPanel();
+        datosIngresar = new javax.swing.JPanel();
+        resalto = new javax.swing.JLabel();
+        tipo = new javax.swing.JTextField();
+        BorrarTodo = new javax.swing.JButton();
+        txtPantallaIngresoProfundidad = new javax.swing.JTextField();
+        txtPantallaIngresoCanal = new javax.swing.JTextField();
+        txtPantallaIngresoCaudal = new javax.swing.JTextField();
+        ingresarDatos = new javax.swing.JLabel();
         canalAncho = new javax.swing.JLabel();
         caudal = new javax.swing.JLabel();
         profundidad = new javax.swing.JLabel();
-        txtPantallaIngresoCanal = new javax.swing.JTextField();
-        txtPantallaIngresoCaudal = new javax.swing.JTextField();
-        txtPantallaIngresoProfundidad = new javax.swing.JTextField();
-        txtPantallaSalidaV1 = new javax.swing.JTextField();
-        txtPantallaSalidaFR1 = new javax.swing.JTextField();
-        txtPantallaSalidaY2 = new javax.swing.JTextField();
-        txtPantallaSalidaV2 = new javax.swing.JTextField();
-        txtPantallaSalidaE1 = new javax.swing.JTextField();
-        txtPantallaSalidaE2 = new javax.swing.JTextField();
-        txtPantallaSalidaNRH = new javax.swing.JTextField();
-        txtPantallaSalidaNe = new javax.swing.JTextField();
-        eficiencia = new javax.swing.JTextField();
-        enviar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -96,154 +92,150 @@ public class Interfaz extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jButton0 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        jButton0 = new javax.swing.JButton();
         jButtonEnter = new javax.swing.JButton();
-        Punto = new javax.swing.JButton();
         Borrar = new javax.swing.JButton();
-        l1 = new javax.swing.JTextField();
-        L2 = new javax.swing.JTextField();
-        l3 = new javax.swing.JTextField();
-        ingresarDatos = new javax.swing.JLabel();
-        resultados = new javax.swing.JLabel();
+        Punto = new javax.swing.JButton();
+        enviar = new javax.swing.JButton();
+        Icono = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        fondo2 = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
+        resultado = new javax.swing.JPanel();
+        txtPantallaSalidaV1 = new javax.swing.JTextField();
+        txtPantallaSalidaFR1 = new javax.swing.JTextField();
+        txtPantallaSalidaY2 = new javax.swing.JTextField();
+        txtPantallaSalidaV2 = new javax.swing.JTextField();
+        txtPantallaSalidaE1 = new javax.swing.JTextField();
+        txtPantallaSalidaE2 = new javax.swing.JTextField();
+        txtPantallaSalidaNe = new javax.swing.JTextField();
+        eficiencia = new javax.swing.JTextField();
+        txtPantallaSalidaNRH = new javax.swing.JTextField();
         v1 = new javax.swing.JLabel();
         fr1 = new javax.swing.JLabel();
-        Y2 = new javax.swing.JLabel();
         V2 = new javax.swing.JLabel();
+        Y2 = new javax.swing.JLabel();
         E1 = new javax.swing.JLabel();
         E2 = new javax.swing.JLabel();
-        NRH = new javax.swing.JLabel();
-        ne = new javax.swing.JLabel();
-        txtL1 = new javax.swing.JLabel();
-        txtL2 = new javax.swing.JLabel();
-        txtL3 = new javax.swing.JLabel();
+        L2 = new javax.swing.JTextField();
+        l3 = new javax.swing.JTextField();
+        l1 = new javax.swing.JTextField();
+        resultados = new javax.swing.JLabel();
+        E3 = new javax.swing.JLabel();
+        E4 = new javax.swing.JLabel();
+        E5 = new javax.swing.JLabel();
         txtEficiencia = new javax.swing.JLabel();
-        Icono = new javax.swing.JLabel();
-        Fondo = new javax.swing.JLabel();
+        L1 = new javax.swing.JLabel();
+        txtL3 = new javax.swing.JLabel();
+        txtL2 = new javax.swing.JLabel();
+        E6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
         setIconImages(getIconImages());
         setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        canalAncho.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        canalAncho.setForeground(new java.awt.Color(255, 255, 255));
-        canalAncho.setText("canal");
-        getContentPane().add(canalAncho, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
+        txtL1.setFont(new java.awt.Font("Times New Roman", 2, 12)); // NOI18N
+        txtL1.setForeground(new java.awt.Color(255, 255, 255));
+        txtL1.setText("L1");
+        getContentPane().add(txtL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 50, -1));
 
-        caudal.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        caudal.setForeground(new java.awt.Color(255, 255, 255));
-        caudal.setText("caudal");
-        getContentPane().add(caudal, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
+        controles.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.darkGray, java.awt.Color.lightGray, java.awt.Color.lightGray));
+        getContentPane().add(controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 770, 70));
 
-        profundidad.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        profundidad.setForeground(new java.awt.Color(255, 255, 255));
-        profundidad.setText("profundidad");
-        getContentPane().add(profundidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+        datosIngresar.setBackground(new java.awt.Color(0, 0, 0));
+        datosIngresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.gray, java.awt.Color.lightGray, java.awt.Color.lightGray));
+        datosIngresar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        resalto.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        resalto.setForeground(new java.awt.Color(255, 255, 255));
+        resalto.setText("Tipo de resalto hidráulico");
+        datosIngresar.add(resalto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 170, 30));
+
+        tipo.setEditable(false);
+        tipo.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        tipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipoActionPerformed(evt);
+            }
+        });
+        datosIngresar.add(tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 120, 30));
+
+        BorrarTodo.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        BorrarTodo.setText("borar todo");
+        BorrarTodo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BorrarTodoMouseClicked(evt);
+            }
+        });
+        datosIngresar.add(BorrarTodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, -1, 30));
+
+        txtPantallaIngresoProfundidad.setEditable(false);
+        txtPantallaIngresoProfundidad.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        txtPantallaIngresoProfundidad.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.gray));
+        txtPantallaIngresoProfundidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPantallaIngresoProfundidadActionPerformed(evt);
+            }
+        });
+        datosIngresar.add(txtPantallaIngresoProfundidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 120, 30));
 
         txtPantallaIngresoCanal.setEditable(false);
-        txtPantallaIngresoCanal.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        txtPantallaIngresoCanal.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         txtPantallaIngresoCanal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.gray));
         txtPantallaIngresoCanal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPantallaIngresoCanalActionPerformed(evt);
             }
         });
-        getContentPane().add(txtPantallaIngresoCanal, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 110, -1));
+        datosIngresar.add(txtPantallaIngresoCanal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 120, 30));
 
         txtPantallaIngresoCaudal.setEditable(false);
-        txtPantallaIngresoCaudal.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        txtPantallaIngresoCaudal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.gray));
-        getContentPane().add(txtPantallaIngresoCaudal, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 110, -1));
-
-        txtPantallaIngresoProfundidad.setEditable(false);
-        txtPantallaIngresoProfundidad.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        txtPantallaIngresoProfundidad.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.gray));
-        getContentPane().add(txtPantallaIngresoProfundidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 110, -1));
-
-        txtPantallaSalidaV1.setEditable(false);
-        txtPantallaSalidaV1.setFont(new java.awt.Font("Times New Roman", 3, 11)); // NOI18N
-        txtPantallaSalidaV1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.gray));
-        txtPantallaSalidaV1.addActionListener(new java.awt.event.ActionListener() {
+        txtPantallaIngresoCaudal.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        txtPantallaIngresoCaudal.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        txtPantallaIngresoCaudal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPantallaSalidaV1ActionPerformed(evt);
+                txtPantallaIngresoCaudalActionPerformed(evt);
             }
         });
-        getContentPane().add(txtPantallaSalidaV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 110, -1));
+        datosIngresar.add(txtPantallaIngresoCaudal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 120, 30));
 
-        txtPantallaSalidaFR1.setEditable(false);
-        txtPantallaSalidaFR1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.gray));
-        txtPantallaSalidaFR1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPantallaSalidaFR1ActionPerformed(evt);
+        ingresarDatos.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
+        ingresarDatos.setForeground(new java.awt.Color(255, 255, 255));
+        ingresarDatos.setText("Ingresar Datos (unidades C.G.S.)");
+        ingresarDatos.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
+        ingresarDatos.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                ingresarDatosAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        getContentPane().add(txtPantallaSalidaFR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 110, -1));
+        datosIngresar.add(ingresarDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 260, 60));
 
-        txtPantallaSalidaY2.setEditable(false);
-        txtPantallaSalidaY2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.gray));
-        getContentPane().add(txtPantallaSalidaY2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 110, -1));
+        canalAncho.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        canalAncho.setForeground(new java.awt.Color(255, 255, 255));
+        canalAncho.setText("Ancho canal");
+        datosIngresar.add(canalAncho, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 70, 20));
 
-        txtPantallaSalidaV2.setEditable(false);
-        txtPantallaSalidaV2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.lightGray, java.awt.Color.gray, java.awt.Color.gray));
-        txtPantallaSalidaV2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPantallaSalidaV2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtPantallaSalidaV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 110, -1));
+        caudal.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        caudal.setForeground(new java.awt.Color(255, 255, 255));
+        caudal.setText("Caudal");
+        datosIngresar.add(caudal, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 50, 20));
 
-        txtPantallaSalidaE1.setEditable(false);
-        txtPantallaSalidaE1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.gray));
-        txtPantallaSalidaE1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPantallaSalidaE1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtPantallaSalidaE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 110, -1));
-
-        txtPantallaSalidaE2.setEditable(false);
-        txtPantallaSalidaE2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.gray));
-        getContentPane().add(txtPantallaSalidaE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 110, -1));
-
-        txtPantallaSalidaNRH.setEditable(false);
-        txtPantallaSalidaNRH.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        txtPantallaSalidaNRH.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.gray));
-        txtPantallaSalidaNRH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPantallaSalidaNRHActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtPantallaSalidaNRH, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 110, -1));
-
-        txtPantallaSalidaNe.setEditable(false);
-        txtPantallaSalidaNe.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        txtPantallaSalidaNe.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.gray));
-        txtPantallaSalidaNe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPantallaSalidaNeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtPantallaSalidaNe, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 110, -1));
-
-        eficiencia.setFont(new java.awt.Font("Times New Roman", 3, 11)); // NOI18N
-        eficiencia.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
-        eficiencia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eficienciaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(eficiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 280, 130, 20));
-
-        enviar.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        enviar.setText("Calcular");
-        enviar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enviarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+        profundidad.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        profundidad.setForeground(new java.awt.Color(255, 255, 255));
+        profundidad.setText("Profundidad inicial");
+        datosIngresar.add(profundidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         jButton1.setText("1");
@@ -252,7 +244,7 @@ public class Interfaz extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, -1, 31));
+        datosIngresar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, -1, 31));
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         jButton2.setText("2");
@@ -261,7 +253,7 @@ public class Interfaz extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, -1, 31));
+        datosIngresar.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, -1, 31));
 
         jButton3.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         jButton3.setText("3");
@@ -270,7 +262,7 @@ public class Interfaz extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, 31));
+        datosIngresar.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, -1, 31));
 
         jButton4.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         jButton4.setText("4");
@@ -279,7 +271,7 @@ public class Interfaz extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, -1, 31));
+        datosIngresar.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, -1, 31));
 
         jButton5.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         jButton5.setText("5");
@@ -288,7 +280,7 @@ public class Interfaz extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, -1, 31));
+        datosIngresar.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, -1, 31));
 
         jButton6.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         jButton6.setText("6");
@@ -297,7 +289,7 @@ public class Interfaz extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, -1, 31));
+        datosIngresar.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, -1, 31));
 
         jButton7.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         jButton7.setText("7");
@@ -306,7 +298,7 @@ public class Interfaz extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, 31));
+        datosIngresar.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, -1, 31));
 
         jButton8.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         jButton8.setText("8");
@@ -315,15 +307,7 @@ public class Interfaz extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, 31));
-
-        jButton0.setText("0");
-        jButton0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton0ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton0, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 40, 30));
+        datosIngresar.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, 31));
 
         jButton9.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         jButton9.setText("9");
@@ -332,7 +316,15 @@ public class Interfaz extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, 31));
+        datosIngresar.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, -1, 31));
+
+        jButton0.setText("0");
+        jButton0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton0ActionPerformed(evt);
+            }
+        });
+        datosIngresar.add(jButton0, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 40, 30));
 
         jButtonEnter.setText("Enter");
         jButtonEnter.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -351,16 +343,7 @@ public class Interfaz extends javax.swing.JFrame {
                 jButtonEnterActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonEnter, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 70, 30));
-
-        Punto.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        Punto.setText(".");
-        Punto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PuntoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Punto, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 50, 30));
+        datosIngresar.add(jButtonEnter, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 70, 30));
 
         Borrar.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         Borrar.setText("Borrar");
@@ -369,22 +352,163 @@ public class Interfaz extends javax.swing.JFrame {
                 BorrarActionPerformed(evt);
             }
         });
-        getContentPane().add(Borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 90, 30));
+        datosIngresar.add(Borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 100, 30));
 
-        l1.setEditable(false);
-        l1.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        l1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.gray));
-        l1.addActionListener(new java.awt.event.ActionListener() {
+        Punto.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        Punto.setText(".");
+        Punto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                l1ActionPerformed(evt);
+                PuntoActionPerformed(evt);
             }
         });
-        getContentPane().add(l1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, 130, 20));
+        datosIngresar.add(Punto, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, 50, 30));
+
+        enviar.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        enviar.setText("Calcular");
+        enviar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                enviarMouseClicked(evt);
+            }
+        });
+        enviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enviarActionPerformed(evt);
+            }
+        });
+        datosIngresar.add(enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, -1, -1));
+
+        Icono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icono.png"))); // NOI18N
+        datosIngresar.add(Icono, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/datos.png"))); // NOI18N
+        datosIngresar.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 8, 150, 140));
+
+        fondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        datosIngresar.add(fondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 790, 270));
+
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        Fondo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FondoMouseClicked(evt);
+            }
+        });
+        datosIngresar.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 790, 260));
+
+        getContentPane().add(datosIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 770, 510));
+
+        resultado.setBackground(new java.awt.Color(255, 255, 255));
+        resultado.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.gray, java.awt.Color.lightGray, java.awt.Color.lightGray));
+        resultado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtPantallaSalidaV1.setEditable(false);
+        txtPantallaSalidaV1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        txtPantallaSalidaV1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.black, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        txtPantallaSalidaV1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPantallaSalidaV1ActionPerformed(evt);
+            }
+        });
+        resultado.add(txtPantallaSalidaV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 100, 30));
+
+        txtPantallaSalidaFR1.setEditable(false);
+        txtPantallaSalidaFR1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        txtPantallaSalidaFR1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.black, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        txtPantallaSalidaFR1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPantallaSalidaFR1ActionPerformed(evt);
+            }
+        });
+        resultado.add(txtPantallaSalidaFR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 100, 30));
+
+        txtPantallaSalidaY2.setEditable(false);
+        txtPantallaSalidaY2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        txtPantallaSalidaY2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.black, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        resultado.add(txtPantallaSalidaY2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 100, 30));
+
+        txtPantallaSalidaV2.setEditable(false);
+        txtPantallaSalidaV2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        txtPantallaSalidaV2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.black, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        txtPantallaSalidaV2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPantallaSalidaV2ActionPerformed(evt);
+            }
+        });
+        resultado.add(txtPantallaSalidaV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 100, 30));
+
+        txtPantallaSalidaE1.setEditable(false);
+        txtPantallaSalidaE1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        txtPantallaSalidaE1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.black, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        txtPantallaSalidaE1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPantallaSalidaE1ActionPerformed(evt);
+            }
+        });
+        resultado.add(txtPantallaSalidaE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 100, 30));
+
+        txtPantallaSalidaE2.setEditable(false);
+        txtPantallaSalidaE2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        txtPantallaSalidaE2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.black, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        resultado.add(txtPantallaSalidaE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 100, 30));
+
+        txtPantallaSalidaNe.setEditable(false);
+        txtPantallaSalidaNe.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        txtPantallaSalidaNe.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        txtPantallaSalidaNe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPantallaSalidaNeActionPerformed(evt);
+            }
+        });
+        resultado.add(txtPantallaSalidaNe, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 100, 30));
+
+        eficiencia.setEditable(false);
+        eficiencia.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        eficiencia.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        eficiencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eficienciaActionPerformed(evt);
+            }
+        });
+        resultado.add(eficiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 530, 110, 30));
+
+        txtPantallaSalidaNRH.setEditable(false);
+        txtPantallaSalidaNRH.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        txtPantallaSalidaNRH.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        txtPantallaSalidaNRH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPantallaSalidaNRHActionPerformed(evt);
+            }
+        });
+        resultado.add(txtPantallaSalidaNRH, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 100, 30));
+
+        v1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        v1.setText("v1");
+        resultado.add(v1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
+
+        fr1.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        fr1.setText("FR1");
+        resultado.add(fr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
+
+        V2.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        V2.setText("V2");
+        resultado.add(V2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 20, 20));
+
+        Y2.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        Y2.setText("Y2");
+        resultado.add(Y2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
+
+        E1.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        E1.setForeground(new java.awt.Color(51, 51, 51));
+        E1.setText("E1");
+        resultado.add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
+
+        E2.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        E2.setText("E2");
+        resultado.add(E2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, -1, 10));
 
         L2.setEditable(false);
         L2.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         L2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.gray));
-        getContentPane().add(L2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 130, 20));
+        resultado.add(L2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 180, 90, 30));
 
         l3.setEditable(false);
         l3.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
@@ -394,100 +518,74 @@ public class Interfaz extends javax.swing.JFrame {
                 l3ActionPerformed(evt);
             }
         });
-        getContentPane().add(l3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 130, 20));
+        resultado.add(l3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 220, 90, 30));
 
-        ingresarDatos.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
-        ingresarDatos.setForeground(new java.awt.Color(255, 255, 255));
-        ingresarDatos.setText("Ingresar Datos");
-        ingresarDatos.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
-        ingresarDatos.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                ingresarDatosAncestorAdded(evt);
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+        l1.setEditable(false);
+        l1.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        l1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.white, java.awt.Color.gray, java.awt.Color.gray));
+        l1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l1ActionPerformed(evt);
             }
         });
-        getContentPane().add(ingresarDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
+        resultado.add(l1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 130, 90, 30));
 
         resultados.setBackground(new java.awt.Color(255, 255, 255));
-        resultados.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        resultados.setForeground(new java.awt.Color(255, 255, 255));
+        resultados.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         resultados.setText("resultados");
         resultados.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 resultadosMouseClicked(evt);
             }
         });
-        getContentPane().add(resultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, -1));
+        resultado.add(resultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 100, 30));
 
-        v1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        v1.setForeground(new java.awt.Color(255, 255, 255));
-        v1.setText("v1");
-        getContentPane().add(v1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+        E3.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        E3.setText("Pérdida de energia");
+        resultado.add(E3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 530, -1, 20));
 
-        fr1.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        fr1.setForeground(new java.awt.Color(255, 255, 255));
-        fr1.setText("FR1");
-        getContentPane().add(fr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
+        E4.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        E4.setText("nRH");
+        resultado.add(E4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, -1, 20));
 
-        Y2.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        Y2.setForeground(new java.awt.Color(255, 255, 255));
-        Y2.setText("Y2");
-        getContentPane().add(Y2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
-
-        V2.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        V2.setForeground(new java.awt.Color(255, 255, 255));
-        V2.setText("V2");
-        getContentPane().add(V2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, -1, -1));
-
-        E1.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        E1.setForeground(new java.awt.Color(255, 255, 255));
-        E1.setText("E1");
-        getContentPane().add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
-
-        E2.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        E2.setForeground(new java.awt.Color(255, 255, 255));
-        E2.setText("E2");
-        getContentPane().add(E2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 364, -1, 10));
-
-        NRH.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        NRH.setForeground(new java.awt.Color(255, 255, 255));
-        NRH.setText("ηRH");
-        getContentPane().add(NRH, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
-
-        ne.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        ne.setForeground(new java.awt.Color(255, 255, 255));
-        ne.setText("ηE");
-        getContentPane().add(ne, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, -1, -1));
-
-        txtL1.setFont(new java.awt.Font("Times New Roman", 2, 12)); // NOI18N
-        txtL1.setForeground(new java.awt.Color(255, 255, 255));
-        txtL1.setText("L1");
-        getContentPane().add(txtL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, -1, -1));
-
-        txtL2.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        txtL2.setForeground(new java.awt.Color(255, 255, 255));
-        txtL2.setText("L2");
-        getContentPane().add(txtL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, -1, -1));
-
-        txtL3.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
-        txtL3.setForeground(new java.awt.Color(255, 255, 255));
-        txtL3.setText("L3");
-        getContentPane().add(txtL3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, -1, 10));
+        E5.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        E5.setText("nE");
+        resultado.add(E5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, -1, 20));
 
         txtEficiencia.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         txtEficiencia.setForeground(new java.awt.Color(255, 255, 255));
         txtEficiencia.setText("perdida de energia ");
-        getContentPane().add(txtEficiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, -1, -1));
+        resultado.add(txtEficiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 254, -1, 40));
 
-        Icono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icono.png"))); // NOI18N
-        getContentPane().add(Icono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
+        L1.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
+        L1.setText("L1");
+        resultado.add(L1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 130, 20, 50));
 
-        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
-        Fondo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 650, 430));
+        txtL3.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        txtL3.setText("L3");
+        resultado.add(txtL3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 220, 20, 30));
+
+        txtL2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        txtL2.setText("L2");
+        resultado.add(txtL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 180, 20, 20));
+
+        E6.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        E6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images.png"))); // NOI18N
+        resultado.add(E6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 280));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/otra.png"))); // NOI18N
+        resultado.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 140, 280));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/otra.png"))); // NOI18N
+        resultado.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 180, 280));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/otra.png"))); // NOI18N
+        resultado.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 300));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/otra.png"))); // NOI18N
+        resultado.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, -10, 170, 320));
+
+        getContentPane().add(resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -508,19 +606,49 @@ public class Interfaz extends javax.swing.JFrame {
             
             Hidraulica hidraulica1=new Hidraulica(valorCaudal,valorCanal,valorProfundidad);
            
-            txtPantallaSalidaV1.setText(String.valueOf(hidraulica1.calcularVelocidad()));
+            txtPantallaSalidaV1.setText(String.valueOf(hidraulica1.calcularVelocidad()+" cm/s"));
             txtPantallaSalidaFR1.setText(String.valueOf(hidraulica1.FR1()));
-            txtPantallaSalidaY2.setText(String.valueOf(hidraulica1.Y2()));
-            txtPantallaSalidaV2.setText(String.valueOf(hidraulica1.velocidad2()));
-            txtPantallaSalidaE1.setText(String.valueOf(hidraulica1.E1()));
-            txtPantallaSalidaE2.setText(String.valueOf(hidraulica1.E2()));
+            if(hidraulica1.FR1()==1)
+            {
+                tipo.setText(" No hay resalto");
+            }
+            else if(hidraulica1.FR1()>1 && hidraulica1.FR1()<1.7)
+            {
+                tipo.setText(" Resalto Ondular ");
+                
+            }
+            else if (hidraulica1.FR1()>1.7 && hidraulica1.FR1()<2.5)
+            {
+                tipo.setText(" Resalto Débil");
+            }
+            else if (hidraulica1.FR1()>2.5 && hidraulica1.FR1()<4.5)
+            {
+                tipo.setText(" Resalto Oscilante");
+            }
+            else if (hidraulica1.FR1()>4.5 && hidraulica1.FR1()<9.0)
+            {
+                tipo.setText(" Resalto Estable");
+            }
+            else if (hidraulica1.FR1()>9.0)
+            {
+                tipo.setText(" Resalto Fuerte");
+            }
+            
+            txtPantallaSalidaY2.setText(String.valueOf(hidraulica1.Y2()+" cm"));
+            txtPantallaSalidaV2.setText(String.valueOf(hidraulica1.velocidad2()+" cm/s"));
+            txtPantallaSalidaE1.setText(String.valueOf(hidraulica1.E1()+" cm"));
+            txtPantallaSalidaE2.setText(String.valueOf(hidraulica1.E2()+" cm"));
             txtPantallaSalidaNRH.setText(String.valueOf(hidraulica1.nRH()));
             txtPantallaSalidaNe.setText(String.valueOf(hidraulica1.nE()));
-            l1.setText(String.valueOf(hidraulica1.l1()));
-            L2.setText(String.valueOf(hidraulica1.l2()));
-            l3.setText(String.valueOf(hidraulica1.l3()));
-            eficiencia.setText(String.valueOf(hidraulica1.peridaEnergia()));
+            l1.setText(String.valueOf(hidraulica1.l1()+" cm"));
+            L2.setText(String.valueOf(hidraulica1.l2()+" cm"));
+            l3.setText(String.valueOf(hidraulica1.l3()+" cm"));
+            eficiencia.setText(String.valueOf(hidraulica1.peridaEnergia()+" cm"));
              
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(Icono, "datos incompletos ");
         }
       
     }//GEN-LAST:event_enviarActionPerformed
@@ -865,6 +993,58 @@ public class Interfaz extends javax.swing.JFrame {
       
     }//GEN-LAST:event_jButtonEnterMouseReleased
 
+    private void FondoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FondoMouseClicked
+        
+    }//GEN-LAST:event_FondoMouseClicked
+
+    private void enviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enviarMouseClicked
+        AnimationClass longuitud1=new AnimationClass();
+        longuitud1.jLabelXRight(-30, 10, 10, 5, L1);
+        
+        AnimationClass longuitud2=new AnimationClass();
+        longuitud2.jLabelXRight(-30, 10, 10, 5, txtL2);
+        
+        AnimationClass longuitud3=new AnimationClass();
+        longuitud3.jLabelXRight(-30, 10, 10, 5, txtL3);
+        
+        AnimationClass resultado1=new AnimationClass();
+        resultado1.jTextFieldXRight(-100, 30, 10, 5, l1);
+        
+        AnimationClass resultado2=new AnimationClass();
+        resultado2.jTextFieldXRight(-100, 30, 10, 5, L2);
+        
+        AnimationClass resultado3=new AnimationClass();
+        resultado3.jTextFieldXRight(-100, 30, 10, 5, l3);
+        
+    }//GEN-LAST:event_enviarMouseClicked
+
+    private void txtPantallaIngresoProfundidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPantallaIngresoProfundidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPantallaIngresoProfundidadActionPerformed
+
+    private void txtPantallaIngresoCaudalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPantallaIngresoCaudalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPantallaIngresoCaudalActionPerformed
+
+    private void BorrarTodoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BorrarTodoMouseClicked
+        AnimationClass borrar1=new AnimationClass();
+        borrar1.jTextFieldXLeft(30, -100, 10, 5, l1);
+        
+        AnimationClass borrar2=new AnimationClass();
+        borrar2.jTextFieldXLeft(30, -100, 10, 5, L2);
+        
+        AnimationClass borrar3=new AnimationClass();
+        borrar3.jTextFieldXLeft(30, -100, 10, 5, l3);
+        
+        AnimationClass text1=new AnimationClass();
+        text1.jLabelXLeft(ABORT, ERROR, WIDTH, NORMAL, jLabel1);
+        
+    }//GEN-LAST:event_BorrarTodoMouseClicked
+
+    private void tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tipoActionPerformed
+
     /**
      * funcion principal
      * @param args 
@@ -877,7 +1057,7 @@ public class Interfaz extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -904,19 +1084,27 @@ public class Interfaz extends javax.swing.JFrame {
     //atributos 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Borrar;
+    private javax.swing.JButton BorrarTodo;
     private javax.swing.JLabel E1;
     private javax.swing.JLabel E2;
+    private javax.swing.JLabel E3;
+    private javax.swing.JLabel E4;
+    private javax.swing.JLabel E5;
+    private javax.swing.JLabel E6;
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel Icono;
+    private javax.swing.JLabel L1;
     private javax.swing.JTextField L2;
-    private javax.swing.JLabel NRH;
     private javax.swing.JButton Punto;
     private javax.swing.JLabel V2;
     private javax.swing.JLabel Y2;
     private javax.swing.JLabel canalAncho;
     private javax.swing.JLabel caudal;
+    private javax.swing.JPanel controles;
+    private javax.swing.JPanel datosIngresar;
     private javax.swing.JTextField eficiencia;
     private javax.swing.JButton enviar;
+    private javax.swing.JLabel fondo2;
     private javax.swing.JLabel fr1;
     private javax.swing.JLabel ingresarDatos;
     private javax.swing.JButton jButton0;
@@ -930,11 +1118,18 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JButton jButtonEnter;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField l1;
     private javax.swing.JTextField l3;
-    private javax.swing.JLabel ne;
     private javax.swing.JLabel profundidad;
+    private javax.swing.JLabel resalto;
+    private javax.swing.JPanel resultado;
     private javax.swing.JLabel resultados;
+    private javax.swing.JTextField tipo;
     private javax.swing.JLabel txtEficiencia;
     private javax.swing.JLabel txtL1;
     private javax.swing.JLabel txtL2;
